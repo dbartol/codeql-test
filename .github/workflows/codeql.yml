@@ -96,7 +96,7 @@ jobs:
         category: "/language:${{matrix.language}}"
 
     - name: Upload SARIF
-      uses: actions/upload-artifacts@v4
+      uses: actions/upload-artifact@v4
       with:
         path: ../results
         name: SARIF
