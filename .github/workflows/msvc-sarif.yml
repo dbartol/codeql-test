@@ -20,7 +20,7 @@ jobs:
     - name: Compile
       shell: pwsh
       run: |
-        cl /c test.cpp /experimental:log out.sarif /W4
+        cl /c uninit.cpp /experimental:log out.sarif /W4
         
     - name: Upload SARIF
       uses: actions/upload-artifact@v4
