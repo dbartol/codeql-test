@@ -11,6 +11,9 @@ jobs:
     name: Analyze
     runs-on: windows-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
     - name: Prepare
       uses: ilammy/msvc-dev-cmd@v1
       
