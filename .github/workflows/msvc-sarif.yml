@@ -11,6 +11,9 @@ jobs:
     name: Analyze
     runs-on: windows-latest
     steps:
+    - name: Prepare
+      uses: ilammy/msvc-dev-cmd@v1
+      
     - name: Compile
       shell: pwsh
       run: |
