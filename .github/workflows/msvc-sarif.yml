@@ -1,0 +1,23 @@
+name: "MSVC SARIF"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: windows-latest
+    steps:
+    - name: Compile
+      shell: pwsh
+      run: |
+        cl /c test.cpp /experimental:log out.sarif /W4
+        
+    - name: Upload SARIF
+      uses: actions/upload-artifact@v4
+      with:
+        path: out.sarif
+        name: SARIF
